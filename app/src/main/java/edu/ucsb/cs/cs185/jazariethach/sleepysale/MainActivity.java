@@ -59,20 +59,22 @@ public class MainActivity extends ActionBarActivity {
 //        int id = context.getResources().getIdentifier("big_" + i,"drawable", context.getPackageName());
 
         List<CardInfo> cards = new ArrayList<CardInfo>();
-        for (int i=1; i <= size; i++) {
+ //CardInfo(String name, int price, String contact, String desc,int image, boolean obo, boolean sold, boolean buyNow, int numBids){
+        cards.add(new CardInfo("Cat", 200, "8188251504", "That is one fine cat", R.drawable.cat1, false, false, false, 3));
+        cards.add(new CardInfo("Toucan", 532, "Make@Money.com", "That is one fine Toucan? Sometimes chirps", R.drawable.cat2, true, false, true, 0));
+
+
+  /*      for (int i=1; i <= size; i++) {
             CardInfo ci = new CardInfo();
             ci.itemName = "ITEM" + i;
-            ci.email = "Contact Info: " + CardInfo.EMAIL_PREFIX + i + "@test.com";
-            ci.itemPrice = "$" + i*10;
+            ci.contactInfo = "Contact Info: " + CardInfo.EMAIL_PREFIX + i + "@test.com";
+            ci.itemPrice =  i*10;
            // ci.description = "Description: "+ this.getResources().getIdentifier("desc"+i, "strings", this.getPackageName());
             ci.description = "Description: Oh hey, that is one sweet cat!";
             ci.image = getId("cat"+i, R.drawable.class);
 
-
-
             cards.add(ci);
-
-        }
+        }*/
 
         return cards;
     }

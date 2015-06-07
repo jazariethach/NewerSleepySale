@@ -5,11 +5,26 @@ package edu.ucsb.cs.cs185.jazariethach.sleepysale;
  */
 public class CardInfo {
     public String itemName;
-    public String itemPrice;
-    public String email;
+    public int itemPrice;
+    public String contactInfo;
     public String description;
     public int image;
-    public boolean sold = false;
+    public boolean obo;
+    public boolean sold;
+    public boolean buyNow; //implies bidding
+    public int numBids;
 
-    protected static final String EMAIL_PREFIX = "email_";
+    public CardInfo(String name, int price, String contact, String desc,
+                    int image, boolean obo, boolean sold, boolean buyNow, int numBids){
+
+        this.itemName = name;
+        this.itemPrice = price;
+        this.contactInfo = contact;
+        this.description = desc;
+        this.image = image;
+        this.obo = obo;
+        this.sold = sold;
+        this.buyNow = buyNow;
+        this.numBids = numBids;
+    }
 }

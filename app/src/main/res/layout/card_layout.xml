@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.v7.widget.CardView
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -8,68 +9,94 @@
     card_view:cardCornerRadius="4dp"
     android:layout_margin="5dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:background="@color/black"
             android:text="Item Name"
-            android:gravity="center_vertical"
+            android:gravity="left|center_horizontal"
             android:padding="2dp"
             android:textColor="@android:color/white"
             android:textSize="14dp"/>
 
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$$$"
-            android:textColor="@color/green"
-            android:gravity="center_vertical"
-            android:textSize="30dp"
-            android:layout_marginLeft="5dp"
-            android:layout_alignTop="@+id/imageView"
-            android:layout_toEndOf="@+id/imageView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/contact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contact Info:"
-            android:textSize="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="150dp"
-            android:layout_marginEnd="147dp"
-            android:layout_below="@+id/desc"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="false"
-            android:layout_marginLeft="20dp" />
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView"
+                android:src="@drawable/cat1"
+                android:padding="2dp"
+                android:layout_marginRight="4dp"
+                android:scaleType="centerCrop"/>
 
-        <TextView
-            android:id="@+id/desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Description:"
-            android:textSize="10dp"
-            android:layout_centerVertical="true"
-            android:layout_alignEnd="@+id/contact" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:src="@drawable/cat1"
-            android:layout_marginRight="5dp"
-            android:layout_toStartOf="@+id/desc"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@+id/title" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$$$"
+                        android:textColor="@color/green"
+                        android:gravity="left"
+                        android:textSize="30dp"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Current Bids: 0"
+                        android:textColor="@color/grey"
+                        android:id="@+id/buyType"
+                        android:layout_below="@+id/price" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OBO"
+                        android:textSize="17dp"
+                        android:id="@+id/obo"
+                        android:padding="3dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true" />
+
+                    <TextView
+                        android:id="@+id/desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description:"
+                        android:textSize="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contact Info:"
+                        android:textSize="10sp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="44dp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>

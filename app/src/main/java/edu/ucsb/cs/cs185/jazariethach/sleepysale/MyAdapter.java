@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
@@ -29,11 +31,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
     @Override
     public void onBindViewHolder(CardViewHolder cvh, int i) {
         CardInfo ci = cardList.get(i);
-        cvh.vPrice.setText(ci.itemPrice);
-        cvh.vContactInfo.setText(ci.email);
+        cvh.vPrice.setText("$"+ci.itemPrice);
+        cvh.vContactInfo.setText("Contact Info: " + ci.contactInfo);
         cvh.vTitle.setText(ci.itemName);
-        cvh.vDesc.setText(ci.description);
+        cvh.vDesc.setText("Description: " + ci.description);
         cvh.iv.setImageResource(ci.image);
+        if(ci.buyNow){
+            cvh.type.setText("Buy Now");
+        }else{
+            cvh.type.setText("Current Bids:" + ci.numBids);
+        }
+        if(ci.obo){
+            cvh.obo.setVisibility(View.VISIBLE);
+        }else{
+            cvh.obo.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -51,6 +63,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
         public TextView vContactInfo;
         public TextView vTitle;
         public TextView vDesc;
+        public TextView obo;
+        public TextView type;
         public ImageView iv;
 
         public CardViewHolder(View v) {
@@ -59,6 +73,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
             vContactInfo = (TextView)  v.findViewById(R.id.contact);
             vTitle = (TextView) v.findViewById(R.id.title);
             vDesc = (TextView) v.findViewById(R.id.desc);
+            obo = (TextView) v.findViewById(R.id.obo);
+            type = (TextView) v.findViewById(R.id.buyType);
             iv = (ImageView) v.findViewById(R.id.imageView);
         }
     }
