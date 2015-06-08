@@ -1,0 +1,127 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv"
+                android:padding="16dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/plus"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:background="@color/blue"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:hint="Enter a title"
+                android:background="#00000000"
+                android:inputType="textCapSentences"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:background="@color/blue"/>
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:text="Enter a category"
+                android:background="#00000000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:background="@color/blue"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:hint="Enter a price"
+                android:background="#00000000"
+                android:inputType="numberDecimal"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Item Description"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:background="@color/blue"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:hint="Enter a description"
+                android:inputType="textCapSentences"
+                android:background="#00000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Information"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:background="@color/blue"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:hint="Enter contact information"
+                android:inputType="textEmailAddress"
+                android:background="#00000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="End Date"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:background="@color/blue"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:text="Enter end date"
+                android:background="#00000000"
+                android:onClick="endDate"
+                android:id="@+id/date"/>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
