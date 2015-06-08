@@ -20,6 +20,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import android.widget.*;
+import com.squareup.picasso.Picasso;
 
 
 public class SaleActivity extends ActionBarActivity {
@@ -113,14 +114,14 @@ public class SaleActivity extends ActionBarActivity {
         if (resultCode == RESULT_OK) { // Save picture
             ImageView imageView = (ImageView)findViewById(R.id.iv);
             Context context = imageView.getContext();
-//            Picasso.with(context).load(fileUri).resize(800, 400).centerCrop().into(imageView);
+            Picasso.with(context).load(fileUri).resize(800, 400).centerCrop().into(imageView);
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.sell_menu, menu);
         return true;
     }
 
