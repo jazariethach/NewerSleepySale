@@ -17,10 +17,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity2Activity"
-            android:label="@string/title_activity_main_activity2" >
-        </activity>
-        <activity
             android:name=".SaleActivity"
             android:label="@string/title_activity_sale" >
         </activity>

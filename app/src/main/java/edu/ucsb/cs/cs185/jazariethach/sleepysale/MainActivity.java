@@ -1,6 +1,7 @@
 package edu.ucsb.cs.cs185.jazariethach.sleepysale;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,32 +9,45 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+
+import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-
+// Here goes my try at documentation, Idk how it'll be but I'm pretty sure nobody minds
 public class MainActivity extends ActionBarActivity {
     Context context;
 
+    // So this function creates something, apparently it takes in a bundle...
+    // ... wow a whole bundle, that's amazingly remarkable!!!
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
 
+        // We see here that the amazing bundle needs a recycler view, well
+        // you know, because we want to recycle that amazing bundle of
+        // love of course
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
+        // Well at this point of the code, we see that the bundle is just a bit too
+        // overwhelming for us, so we have to adapt to this amazingness, therefore
+        // we create an adapter that can adapt for us!!! great-io!
         MyAdapter adapter = new MyAdapter(context, createList());
         recList.setAdapter(adapter);
     }
 
 
+    // Our options menu for this bundle of goodness, the more options the better ;)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -41,13 +55,16 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
+    // Our bundle of goodness, we need to know what it does when it activates huh?
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.add) {
+            final Intent nextScreen = new Intent(this, SaleActivity.class);
+            context.startActivity(nextScreen);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -57,6 +74,7 @@ public class MainActivity extends ActionBarActivity {
 
     private List<CardInfo> createList() {
         List<CardInfo> cards = new ArrayList<CardInfo>();
+
  //CardInfo(String name, int price, String contact, String desc,int image, int days, boolean sold, boolean buyNow, int numBids, String categories){
         cards.add(new CardInfo("Full Sized Bed", 100, "Full sized ikea bed frame & mattress", R.drawable.bed, 1, false,  3, "#Household #Furniture"));
         cards.add(new CardInfo("Cat Playtime", 0,  "That is one fine cat, and this is your chance to destress! Come play with Jackson, he loves people.", R.drawable.cat1, 1, false, 50, "#Misc"));
