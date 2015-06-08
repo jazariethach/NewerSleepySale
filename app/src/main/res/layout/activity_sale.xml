@@ -54,9 +54,10 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:textSize="15dp"
-                android:text="Select a category"
-                android:textAllCaps="false"
+                android:hint="Select a category"
                 android:background="#00000000"
+                android:textAllCaps="false"
+                android:gravity="left|center_vertical"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -106,11 +107,12 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:textSize="15dp"
-                android:text="Select end date"
+                android:hint="Select end date"
                 android:background="#00000000"
                 android:onClick="endDate"
                 android:id="@+id/date"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:gravity="left|center_vertical"/>
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
