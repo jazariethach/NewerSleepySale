@@ -9,9 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
@@ -46,6 +43,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
         }else{
             cvh.obo.setVisibility(View.GONE);
         }
+
     }
 
     @Override
