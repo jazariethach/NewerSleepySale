@@ -26,10 +26,14 @@ import com.squareup.picasso.Picasso;
 public class SaleActivity extends ActionBarActivity {
     ListView list_view;
     List<String> list = new ArrayList<String>();
+    List<String> days = new ArrayList<String>();
     ArrayAdapter<String> adapter;
+    ArrayAdapter<String> day_adapter;
+
     Uri fileUri = null;
-    int i=0;
+    int i = 0;
     File file = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,10 @@ public class SaleActivity extends ActionBarActivity {
         list.add("Household");
         list.add("Transportation");
         list.add("Misc");
+        days.add("1 day");
+        for (int j = 2; j <= 7; j++) {
+            days.add(j + " days");
+        }
         Button btn = (Button) findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -68,7 +76,7 @@ public class SaleActivity extends ActionBarActivity {
             }
         });
 
-        ImageView iv = (ImageView)findViewById(R.id.iv);
+        ImageView iv = (ImageView) findViewById(R.id.iv);
 //        iv.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -83,7 +91,7 @@ public class SaleActivity extends ActionBarActivity {
         iv.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                ImageView iv = (ImageView)findViewById(R.id.iv);
+                ImageView iv = (ImageView) findViewById(R.id.iv);
                 Context context = iv.getContext();
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     launchCamera();
@@ -112,8 +120,9 @@ public class SaleActivity extends ActionBarActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) { // Save picture
-            ImageView imageView = (ImageView)findViewById(R.id.iv);
+            ImageView imageView = (ImageView) findViewById(R.id.iv);
             Context context = imageView.getContext();
+            imageView.setBackground(null);
             Picasso.with(context).load(fileUri).resize(800, 400).centerCrop().into(imageView);
         }
     }
@@ -134,6 +143,10 @@ public class SaleActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.save) {
+            EditText title = (EditText) findViewById(R.id.title);
+            Button category = (Button) findViewById(R.id.button);
+            EditText price = (EditText) findViewById(R.id.price);
+            EditText desc = (EditText) findViewById(R.id.desc);
             return true;
         }
 
@@ -141,19 +154,23 @@ public class SaleActivity extends ActionBarActivity {
     }
 
     public void endDate(View view) {
-        Calendar c = Calendar.getInstance();
-        int yy = c.get(Calendar.YEAR);
-        int mm = c.get(Calendar.MONTH);
-        int dd = c.get(Calendar.DAY_OF_MONTH);
-        DatePickerDialog date = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            public void onDateSet(DatePicker view, int year, int month, int day) {
-                Calendar c = Calendar.getInstance();
-                c.set(year, month, day);
-                SimpleDateFormat df = new SimpleDateFormat("MMMM dd, yyyy", Locale.US);
-                TextView time = (TextView) findViewById(R.id.date);
-                time.setText(df.format(c.getTime()));
-            }
-        }, yy, mm, dd);
-        date.show();
+        final AlertDialog.Builder builder = new AlertDialog.Builder(SaleActivity.this);
+        builder.setTitle("Select Duration");
+        LayoutInflater inflater = LayoutInflater.from(SaleActivity.this);
+        final View findView = (inflater.inflate(R.layout.duration_list, null));
+        builder.setView(findView);
+        list_view = (ListView) findView.findViewById(R.id.lv);
+        day_adapter = new ArrayAdapter<String>(SaleActivity.this, android.R.layout.simple_expandable_list_item_1, days);
+        builder.setAdapter(day_adapter,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String item = day_adapter.getItem(which);
+                        Button btn = (Button) findViewById(R.id.date);
+                        btn.setText(item);
+                        Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();
+                    }
+                });
+        builder.show();
     }
 }

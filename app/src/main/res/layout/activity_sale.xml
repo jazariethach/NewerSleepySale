@@ -18,7 +18,8 @@
                 android:padding="16dp"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:background="@drawable/camera"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,9 +28,10 @@
                 android:layout_marginTop="10dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"
-                android:background="@color/blue"
+                android:background="@color/skyblue"
                 />
             <EditText
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -45,7 +47,7 @@
                 android:padding="5dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"
-                android:background="@color/blue"/>
+                android:background="@color/skyblue"/>
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
@@ -53,6 +55,7 @@
                 android:padding="5dp"
                 android:textSize="15dp"
                 android:text="Select a category"
+                android:textAllCaps="false"
                 android:background="#00000000"
                 />
             <TextView
@@ -62,7 +65,7 @@
                 android:padding="5dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"
-                android:background="@color/blue"/>
+                android:background="@color/skyblue"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,6 +74,7 @@
                 android:hint="Enter a price"
                 android:background="#00000000"
                 android:inputType="numberDecimal"
+                android:id="@+id/price"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -79,7 +83,7 @@
                 android:padding="5dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"
-                android:background="@color/blue"/>
+                android:background="@color/skyblue"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,22 +91,7 @@
                 android:textSize="15dp"
                 android:hint="Enter a description"
                 android:inputType="textCapSentences"
-                android:background="#00000000"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Contact Information"
-                android:padding="5dp"
-                android:textSize="15dp"
-                android:textColor="@color/white"
-                android:background="@color/blue"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="15dp"
-                android:hint="Enter contact information"
-                android:inputType="textEmailAddress"
+                android:id="@+id/desc"
                 android:background="#00000000"/>
             <TextView
                 android:layout_width="match_parent"
@@ -111,7 +100,7 @@
                 android:padding="5dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"
-                android:background="@color/blue"/>
+                android:background="@color/skyblue"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,14 +109,8 @@
                 android:text="Select end date"
                 android:background="#00000000"
                 android:onClick="endDate"
-                android:id="@+id/date"/>
-            <ToggleButton
-                android:id="@+id/togglebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textOn="Bid"
-                android:textOff="Buy"
-                android:onClick="onToggleClicked"/>
+                android:id="@+id/date"
+                android:textAllCaps="false"/>
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
