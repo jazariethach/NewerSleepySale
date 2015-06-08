@@ -3,20 +3,24 @@ package edu.ucsb.cs.cs185.jazariethach.sleepysale;
 /**
  * Created by Jazarie on 6/5/2015.
  */
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
 
     private List<CardInfo> cardList;
+    Context context;
 
-    public MyAdapter(List<CardInfo> cardList) {
+    public MyAdapter(Context context, List<CardInfo> cardList) {
+        this.context = context;
         this.cardList = cardList;
     }
 
@@ -34,20 +38,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
         }else {
             cvh.vPrice.setText("$" + ci.itemPrice);
         }
-        cvh.vContactInfo.setText("Contact Info: " + ci.contactInfo);
+       // cvh.vContactInfo.setText("Contact Me: " + ci.contactInfo);
         cvh.vTitle.setText(ci.itemName);
         cvh.vDesc.setText("Description: " + ci.description);
         cvh.iv.setImageResource(ci.image);
-        if(ci.buyNow){
-            cvh.type.setText("Buy Now");
-        }else{
-            cvh.type.setText("Current Bids:" + ci.numBids);
-        }
-        if(ci.obo){
-            cvh.obo.setVisibility(View.VISIBLE);
-        }else{
-            cvh.obo.setVisibility(View.GONE);
-        }
+        cvh.type.setText("Current Bids:" + ci.numBids);
+
+
+        cvh.date.setText("Days left: " + ci.days);
+        cvh.tags.setText(ci.tags);
+       // Picasso.with(context).load(image).centerCrop().resize(800, 400).into((ImageView)holder.mView.findViewById(R.id.image));
 
     }
 
@@ -63,21 +63,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
     public static class CardViewHolder extends RecyclerView.ViewHolder {
 
         public TextView vPrice;
-        public TextView vContactInfo;
+        //public TextView vContactInfo;
         public TextView vTitle;
         public TextView vDesc;
-        public TextView obo;
+        public TextView date;
         public TextView type;
+        public TextView tags;
         public ImageView iv;
 
         public CardViewHolder(View v) {
             super(v);
             vPrice =  (TextView) v.findViewById(R.id.price);
-            vContactInfo = (TextView)  v.findViewById(R.id.contact);
+          //  vContactInfo = (TextView)  v.findViewById(R.id.contact);
             vTitle = (TextView) v.findViewById(R.id.title);
             vDesc = (TextView) v.findViewById(R.id.desc);
-            obo = (TextView) v.findViewById(R.id.obo);
+            date = (TextView) v.findViewById(R.id.date);
             type = (TextView) v.findViewById(R.id.buyType);
+            tags = (TextView) v.findViewById(R.id.tags);
             iv = (ImageView) v.findViewById(R.id.imageView);
         }
     }

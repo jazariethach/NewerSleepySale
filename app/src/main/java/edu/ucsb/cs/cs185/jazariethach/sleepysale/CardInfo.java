@@ -6,24 +6,22 @@ package edu.ucsb.cs.cs185.jazariethach.sleepysale;
 public class CardInfo {
     public String itemName;
     public int itemPrice;
-    public String contactInfo;
     public String description;
     public String tags;
     public int image;
-    public boolean obo;
+    public int days;
     public boolean sold;
     public boolean buyNow; //implies bidding
     public int numBids;
 
-    public CardInfo(String name, int price, String contact, String desc,
-                    int image, boolean obo, boolean sold, boolean buyNow, int numBids, String categories){
+    public CardInfo(String name, int price, String desc,
+                    int image, int days, boolean sold, int numBids, String categories){
 
         this.itemName = name;
         this.itemPrice = price;
-        this.contactInfo = contact;
         this.description = desc;
         this.image = image;
-        this.obo = obo;
+        this.days = days;
         this.sold = sold;
         this.buyNow = buyNow;
         this.numBids = numBids;
