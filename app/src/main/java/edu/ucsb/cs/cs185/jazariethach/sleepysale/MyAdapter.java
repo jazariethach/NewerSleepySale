@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
 
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
 
     private List<CardInfo> cardList;
@@ -28,7 +29,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
     @Override
     public void onBindViewHolder(CardViewHolder cvh, int i) {
         CardInfo ci = cardList.get(i);
-        cvh.vPrice.setText("$"+ci.itemPrice);
+        if(ci.itemPrice == 0){
+            cvh.vPrice.setText("FREE");
+        }else {
+            cvh.vPrice.setText("$" + ci.itemPrice);
+        }
         cvh.vContactInfo.setText("Contact Info: " + ci.contactInfo);
         cvh.vTitle.setText(ci.itemName);
         cvh.vDesc.setText("Description: " + ci.description);

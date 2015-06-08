@@ -8,6 +8,7 @@ public class CardInfo {
     public int itemPrice;
     public String contactInfo;
     public String description;
+    public String tags;
     public int image;
     public boolean obo;
     public boolean sold;
@@ -15,7 +16,7 @@ public class CardInfo {
     public int numBids;
 
     public CardInfo(String name, int price, String contact, String desc,
-                    int image, boolean obo, boolean sold, boolean buyNow, int numBids){
+                    int image, boolean obo, boolean sold, boolean buyNow, int numBids, String categories){
 
         this.itemName = name;
         this.itemPrice = price;
@@ -26,5 +27,6 @@ public class CardInfo {
         this.sold = sold;
         this.buyNow = buyNow;
         this.numBids = numBids;
+        this.tags = categories;
     }
 }

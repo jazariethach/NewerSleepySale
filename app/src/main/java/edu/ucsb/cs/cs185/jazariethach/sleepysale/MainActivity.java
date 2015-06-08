@@ -59,9 +59,13 @@ public class MainActivity extends ActionBarActivity {
 //        int id = context.getResources().getIdentifier("big_" + i,"drawable", context.getPackageName());
 
         List<CardInfo> cards = new ArrayList<CardInfo>();
- //CardInfo(String name, int price, String contact, String desc,int image, boolean obo, boolean sold, boolean buyNow, int numBids){
-        cards.add(new CardInfo("Cat", 200, "8188251504", "That is one fine cat", R.drawable.cat1, false, false, false, 3));
-        cards.add(new CardInfo("Toucan", 532, "Make@Money.com", "That is one fine Toucan? Sometimes chirps", R.drawable.cat2, true, false, true, 0));
+ //CardInfo(String name, int price, String contact, String desc,int image, boolean obo, boolean sold, boolean buyNow, int numBids, String categories){
+        cards.add(new CardInfo("Cat", 200, "8188251504", "That is one fine cat", R.drawable.cat1, false, false, false, 3, ""));
+        cards.add(new CardInfo("Toucan", 532, "Make@Money.com", "That is one fine Toucan? Sometimes chirps", R.drawable.cat2, true, false, true, 0, ""));
+        cards.add(new CardInfo("Beats Pill", 100, "Message Me!", "Good as new Beats Pill! Comes with the box, a case, and all the cables.", R.drawable.beats_pill, true, false, true, 0, ""));
+        cards.add(new CardInfo("Dresser", 35, "8188251504","Can be used as a nightstand or dresser!\n" +
+                "Made of Solid Wood--great quality and in great condition. ", R.drawable.dresser, false, false, false, 5, ""));
+
 
 
   /*      for (int i=1; i <= size; i++) {
