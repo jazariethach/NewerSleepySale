@@ -148,7 +148,11 @@ public class SaleActivity extends ActionBarActivity {
             Button category = (Button) findViewById(R.id.button);
             EditText price = (EditText) findViewById(R.id.price);
             EditText desc = (EditText) findViewById(R.id.desc);
+            Button dur = (Button) findViewById(R.id.date);
+            String s = title.getText() + "%" + price.getText() + "%" + desc.getText() +
+                    "%" + dur.getText();
             final Intent nextScreen = new Intent(this, MainActivity.class);
+            nextScreen.putExtra("save", s);
             this.startActivity(nextScreen);
             return true;
         }

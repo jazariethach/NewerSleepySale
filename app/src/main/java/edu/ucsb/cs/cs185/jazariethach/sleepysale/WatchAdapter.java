@@ -63,7 +63,7 @@ public class WatchAdapter extends RecyclerView.Adapter<WatchAdapter.CardViewHold
 
         cvh.date.setText("Days left: " + ci.days);
         cvh.tags.setText(ci.tags);
-        Picasso.with(context).load(ci.image).resize(800, 400).into(cvh.iv);
+        Picasso.with(context).load(ci.image).resize(800, 750).into(cvh.iv);
 
 
     }
