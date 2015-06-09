@@ -31,5 +31,6 @@
     <string name="Login">Login</string>
     <string name="Username">Username</string>
     <string name="Password">Password</string>
+    <string name="title_activity_watched">WatchedActivity</string>
 
 </resources>

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.internal.view.menu.MenuView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -18,8 +19,10 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity{
     Context context;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +50,19 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
-        if (id == R.id.add) {
-            final Intent nextScreen = new Intent(this, SaleActivity.class);
-            context.startActivity(nextScreen);
-            return true;
+
+        switch(item.getItemId()){
+            case R.id.add:
+                final Intent nextScreen = new Intent(this, SaleActivity.class);
+                context.startActivity(nextScreen);
+                return true;
+            case R.id.watch:
+                Intent intent = new Intent(this, WatchedActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
 

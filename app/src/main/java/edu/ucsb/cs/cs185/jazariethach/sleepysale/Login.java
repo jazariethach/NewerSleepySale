@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class Login extends ActionBarActivity {
+public class Login extends Activity {
     private static EditText username;
     private static EditText password;
     private static Button login;
@@ -31,7 +31,7 @@ public class Login extends ActionBarActivity {
 
                             Intent intent = new Intent("edu.ucsb.cs.cs185.jazariethach.sleepysale.MainActivity");
                             startActivity(intent);
-                            Toast.makeText(Login.this, "Username and Password is correct",
+                            Toast.makeText(Login.this, "Welcome back friend",
                                     Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(Login.this,
