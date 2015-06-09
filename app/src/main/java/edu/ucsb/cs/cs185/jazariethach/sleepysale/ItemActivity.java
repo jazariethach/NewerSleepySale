@@ -69,15 +69,18 @@ public class ItemActivity extends ActionBarActivity {
                                     EditText fill_price = (EditText) findView.findViewById(R.id.price);
                                     TextView price = (TextView) findViewById(R.id.price);
                                     String s = price.getText().toString();
-                                    s = s.replace("$", "");
+                                    if (s.substring(0,1) != "$") {
+                                        s = "0";
+                                    } else {
+                                        s = s.replace("$", "");
+                                    }
                                     if (Integer.parseInt(s) < Integer.parseInt(fill_price.getText().toString())) {
                                         price.setText("$" + fill_price.getText());
                                         TextView bid = (TextView) findViewById(R.id.buyType);
                                         String bid_s = bid.getText().toString();
                                         bid_s = bid_s.replace("Current Bids: ", "");
-                                        bid.setText("Current Bids: " + ((Integer.parseInt(bid_s))+1));
-                                    }
-                                    else {
+                                        bid.setText("Current Bids: " + ((Integer.parseInt(bid_s)) + 1));
+                                    } else {
                                         Toast.makeText(ItemActivity.this, "Invalid bid", Toast.LENGTH_SHORT).show();
                                     }
                                 }
