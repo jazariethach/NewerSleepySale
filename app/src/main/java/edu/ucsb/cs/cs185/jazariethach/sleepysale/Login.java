@@ -31,7 +31,7 @@ public class Login extends Activity {
 
                             Intent intent = new Intent("edu.ucsb.cs.cs185.jazariethach.sleepysale.MainActivity");
                             startActivity(intent);
-                            Toast.makeText(Login.this, "Welcome back friend",
+                            Toast.makeText(Login.this, "Welcome back user",
                                     Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(Login.this,

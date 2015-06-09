@@ -40,7 +40,16 @@
             android:layout_below="@+id/password"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="49dp"
-            android:background="@color/skyblue"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:background="@drawable/caticon"
+        android:layout_marginBottom="44dp"
+        android:layout_above="@+id/username"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
