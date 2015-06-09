@@ -53,7 +53,7 @@ public class SaleActivity extends ActionBarActivity {
         Button btn = (Button) findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(SaleActivity.this, "Click event works.", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SaleActivity.this, "Click event works.", Toast.LENGTH_SHORT).show();
                 final AlertDialog.Builder builder = new AlertDialog.Builder(SaleActivity.this);
                 builder.setTitle("List Item");
                 LayoutInflater inflater = LayoutInflater.from(SaleActivity.this);
