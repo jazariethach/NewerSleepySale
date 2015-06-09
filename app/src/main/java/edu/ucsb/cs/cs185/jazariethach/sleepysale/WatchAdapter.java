@@ -1,35 +1,31 @@
 package edu.ucsb.cs.cs185.jazariethach.sleepysale;
 
 /**
- * Created by Jazarie on 6/5/2015.
+ * Created by jessie on 6/9/2015.
  */
-import android.app.AlertDialog;
+
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
-
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
+public class WatchAdapter extends RecyclerView.Adapter<WatchAdapter.CardViewHolder> {
 
     private List<CardInfo> cardList;
     Context context;
     public static Context msgContext;
 
-    public MyAdapter(Context context, List<CardInfo> cardList) {
+    public WatchAdapter(Context context, List<CardInfo> cardList) {
         this.context = context;
         this.msgContext = context;
         this.cardList = cardList;
@@ -49,7 +45,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
         }else {
             cvh.vPrice.setText("$" + ci.itemPrice);
         }
-       // cvh.vContactInfo.setText("Contact Me: " + ci.contactInfo);
+        if(ci.sold==true){
+            cvh.vPrice.setText("Sold: $" + ci.itemPrice);
+            cvh.vPrice.setTextColor(Color.parseColor("#a8a8a8"));
+            cvh.vTitle.setBackgroundColor(Color.parseColor("#a8a8a8"));
+            cvh.date.setTextColor(Color.parseColor("#a8a8a8"));
+        }else{
+            cvh.vPrice.setTextColor(Color.parseColor("#add8e6"));
+            cvh.vTitle.setBackgroundColor(Color.parseColor("#add8e6"));
+            cvh.date.setTextColor(Color.parseColor("#add8e6"));
+        }
+        // cvh.vContactInfo.setText("Contact Me: " + ci.contactInfo);
         cvh.vTitle.setText(ci.itemName);
         cvh.vDesc.setText("Description: " + ci.description);
         //cvh.iv.setImageResource(ci.image);
@@ -58,7 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
         cvh.date.setText("Days left: " + ci.days);
         cvh.tags.setText(ci.tags);
         Picasso.with(context).load(ci.image).resize(800, 400).into(cvh.iv);
-        //Picasso.with(msgContext).load(ci.image).centerCrop().into((ImageView)cvh.iv.findViewById(R.id.image));
+
 
     }
 
@@ -85,7 +91,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
         public CardViewHolder(View v) {
             super(v);
             vPrice =  (TextView) v.findViewById(R.id.price);
-          //  vContactInfo = (TextView)  v.findViewById(R.id.contact);
+            //  vContactInfo = (TextView)  v.findViewById(R.id.contact);
             vTitle = (TextView) v.findViewById(R.id.title);
             vDesc = (TextView) v.findViewById(R.id.desc);
             date = (TextView) v.findViewById(R.id.date);
@@ -115,5 +121,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
             });
 
         }
-    }
-}
+    }}
+

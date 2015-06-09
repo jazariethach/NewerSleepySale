@@ -11,9 +11,9 @@
             android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="edu.ucsb.cs.cs185.jazariethach.sleepysale.MainActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -39,6 +39,25 @@
         <activity
             android:name=".Message"
             android:label="@string/title_activity_message" >
+        </activity>
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="edu.ucsb.cs.cs185.jazariethach.sleepysale.Login" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WatchedActivity"
+            android:label=""
+            android:parentActivityName=".MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.ucsb.cs.cs185.jazariethach.sleepysale.MainActivity" />
         </activity>
     </application>
 
