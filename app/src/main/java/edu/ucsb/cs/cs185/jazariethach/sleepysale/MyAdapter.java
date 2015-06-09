@@ -54,10 +54,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
         cvh.vDesc.setText("Description: " + ci.description);
         //cvh.iv.setImageResource(ci.image);
         cvh.type.setText("Current Bids: " + ci.numBids);
-        
+
         cvh.date.setText("Days left: " + ci.days);
         cvh.tags.setText(ci.tags);
-//        Picasso.with(context).load(ci.image).centerCrop().into((ImageView)cvh.iv.findViewById(R.id.image));
+        Picasso.with(context).load(ci.image).resize(800, 400).into(cvh.iv);
+        //Picasso.with(msgContext).load(ci.image).centerCrop().into((ImageView)cvh.iv.findViewById(R.id.image));
 
     }
 

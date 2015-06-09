@@ -124,7 +124,7 @@ public class SaleActivity extends ActionBarActivity {
             ImageView imageView = (ImageView) findViewById(R.id.iv);
             Context context = imageView.getContext();
             imageView.setBackground(null);
-            Picasso.with(context).load(fileUri).resize(800, 400).centerCrop().into(imageView);
+            Picasso.with(context).load(fileUri).resize(400, 400).centerCrop().into(imageView);
         }
     }
 
@@ -160,14 +160,14 @@ public class SaleActivity extends ActionBarActivity {
         final AlertDialog.Builder builder = new AlertDialog.Builder(SaleActivity.this);
         builder.setTitle("Select Duration");
         LayoutInflater inflater = LayoutInflater.from(SaleActivity.this);
-        final View findView = (inflater.inflate(R.layout.duration_list, null));
+        final View findView = (inflater.inflate(R.layout.bid_layout, null));
         builder.setView(findView);
-        list_view = (ListView) findView.findViewById(R.id.lv);
-        day_adapter = new ArrayAdapter<String>(SaleActivity.this, android.R.layout.simple_expandable_list_item_1, days);
+
         builder.setAdapter(day_adapter,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
                         String item = day_adapter.getItem(which);
                         Button btn = (Button) findViewById(R.id.date);
                         btn.setText(item);

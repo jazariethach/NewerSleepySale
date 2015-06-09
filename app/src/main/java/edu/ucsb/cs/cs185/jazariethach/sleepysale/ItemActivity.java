@@ -1,13 +1,19 @@
 package edu.ucsb.cs.cs185.jazariethach.sleepysale;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +54,38 @@ public class ItemActivity extends ActionBarActivity {
                 context.startActivity(intent);
             }
         });
+        Button bidButton = (Button)findViewById(R.id.bid);
+        bidButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(ItemActivity.this);
+                builder.setTitle("Bid");
+                LayoutInflater inflater = LayoutInflater.from(ItemActivity.this);
+                final View findView = (inflater.inflate(R.layout.bid_layout, null));
+                builder.setView(findView);
+                builder
+                    .setPositiveButton("Done", new DialogInterface.OnClickListener() {
+                                public void onClick(final DialogInterface dialog, final int id) {
+                                    EditText fill_price = (EditText) findView.findViewById(R.id.price);
+                                    TextView price = (TextView) findViewById(R.id.price);
+                                    String s = price.getText().toString();
+                                    s = s.replace("$", "");
+                                    if (Integer.parseInt(s) < Integer.parseInt(fill_price.getText().toString())) {
+                                        price.setText("$" + fill_price.getText());
+                                        TextView bid = (TextView) findViewById(R.id.buyType);
+                                        String bid_s = bid.getText().toString();
+                                        bid_s = bid_s.replace("Current Bids: ", "");
+                                        bid.setText("Current Bids: " + ((Integer.parseInt(bid_s))+1));
+                                    } else {
+                                        Toast.makeText(ItemActivity.this, "Invalid bid", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            }
+                    );
+                builder.show();
+                    }
+            });
+
     }
 
     @Override
