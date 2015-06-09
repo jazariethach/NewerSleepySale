@@ -59,7 +59,7 @@ public class ItemActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(ItemActivity.this);
-                builder.setTitle("Bid");
+                builder.setTitle("Enter Bid");
                 LayoutInflater inflater = LayoutInflater.from(ItemActivity.this);
                 final View findView = (inflater.inflate(R.layout.bid_layout, null));
                 builder.setView(findView);
