@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+    <ImageView
+        android:layout_marginTop="15dp"
+        android:layout_width="215dp"
+        android:layout_height="215dp"
+        android:background="@color/black"
+        />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Item Name"
+            android:padding="3dp"
+            android:paddingLeft="2dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$$$"
+            android:textColor="@color/green"
+            android:gravity="left"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Current Bids: 0"
+            android:textColor="@color/grey"
+            android:id="@+id/buyType"
+            android:layout_below="@+id/price" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="date"
+            android:textSize="10sp"
+            android:textColor="@color/red"
+            android:id="@+id/date"
+            android:padding="3dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:textSize="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/contact"
+            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:text="Contact"
+            android:textSize="8sp"
+            android:layout_above="@+id/tags"
+            android:layout_alignEnd="@+id/buyType" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/tags"
+            android:textSize="10sp"
+            android:textColor="@color/grey"
+            />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:id="@+id/imageView"
+                android:src="@drawable/cat1"
+                android:padding="2dp"
+                android:scaleType="centerCrop"/>
+
+        </LinearLayout>
+    </RelativeLayout>
