@@ -16,15 +16,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="edu.ucsb.cs.cs185.jazariethach.sleepysale.SaleActivity"
+            android:name=".SaleActivity"
             android:label=""
-            android:parentActivityName="edu.ucsb.cs.cs185.jazariethach.sleepysale.MainActivity" >
-        <!-- Parent activity meta-data to support API level 7+ -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="edu.ucsb.cs.cs185.jazariethach.sleepysale.MainActivity" />
+            android:parentActivityName=".MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.ucsb.cs.cs185.jazariethach.sleepysale.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ItemActivity"
+            android:label=""
+            android:parentActivityName=".MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.ucsb.cs.cs185.jazariethach.sleepysale.MainActivity" />
         </activity>
     </application>
 
