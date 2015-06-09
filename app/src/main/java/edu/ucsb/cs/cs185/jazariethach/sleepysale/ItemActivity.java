@@ -1,10 +1,13 @@
 package edu.ucsb.cs.cs185.jazariethach.sleepysale;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +40,14 @@ public class ItemActivity extends ActionBarActivity {
         String d = s.substring(0, s.indexOf("%"));
         date.setText(d);
         s = s.replace(d+"%", "");
+        Button msg = (Button)findViewById(R.id.contact);
+        msg.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                Context context = ItemActivity.this;
+                Intent intent = new Intent(context, Message.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -55,7 +66,7 @@ public class ItemActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.fave) {
-            Toast.makeText(ItemActivity.this, "Added to watchlist!", Toast.LENGTH_LONG);
+            Toast.makeText(getBaseContext(), "Added to watchlist!", Toast.LENGTH_SHORT).show();
             return true;
         }
 

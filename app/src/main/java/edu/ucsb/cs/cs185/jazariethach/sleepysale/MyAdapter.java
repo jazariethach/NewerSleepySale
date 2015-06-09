@@ -27,9 +27,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
 
     private List<CardInfo> cardList;
     Context context;
+    public static Context msgContext;
 
     public MyAdapter(Context context, List<CardInfo> cardList) {
         this.context = context;
+        this.msgContext = context;
         this.cardList = cardList;
     }
 
@@ -52,11 +54,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
         cvh.vDesc.setText("Description: " + ci.description);
         //cvh.iv.setImageResource(ci.image);
         cvh.type.setText("Current Bids: " + ci.numBids);
-
-
+        
         cvh.date.setText("Days left: " + ci.days);
         cvh.tags.setText(ci.tags);
-//        Picasso.with(context).load(ci.image).centerCrop().resize(800, 400).into((ImageView)cvh.iv.findViewById(R.id.image));
+//        Picasso.with(context).load(ci.image).centerCrop().into((ImageView)cvh.iv.findViewById(R.id.image));
 
     }
 
@@ -90,8 +91,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
             type = (TextView) v.findViewById(R.id.buyType);
             tags = (TextView) v.findViewById(R.id.tags);
             iv = (ImageView) v.findViewById(R.id.imageView);
-            Context context = iv.getContext();
-            final Intent nextScreen = new Intent(context, ItemActivity.class);
+            Context iv_context = iv.getContext();
+            final Intent nextScreen = new Intent(iv_context, ItemActivity.class);
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -101,6 +102,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
                     nextScreen.putExtra("test", s);
                     context.startActivity(nextScreen);
 //                    Toast.makeText(context, s, Toast.LENGTH_LONG).show();
+                }
+            });
+
+            Button click = (Button) v.findViewById(R.id.contact);
+            click.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    Intent intent = new Intent(msgContext, Message.class);
+                    msgContext.startActivity(intent);
                 }
             });
 
