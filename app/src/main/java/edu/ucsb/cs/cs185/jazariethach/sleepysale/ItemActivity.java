@@ -69,7 +69,7 @@ public class ItemActivity extends ActionBarActivity {
                                     EditText fill_price = (EditText) findView.findViewById(R.id.price);
                                     TextView price = (TextView) findViewById(R.id.price);
                                     String s = price.getText().toString();
-                                    if (s.substring(0,1) != "$") {
+                                    if (!s.substring(0,1).equals("$")) {
                                         s = "0";
                                     } else {
                                         s = s.replace("$", "");
