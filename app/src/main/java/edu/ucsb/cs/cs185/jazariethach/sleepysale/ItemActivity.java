@@ -59,7 +59,7 @@ public class ItemActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(ItemActivity.this);
-                builder.setTitle("Enter Bid");
+                builder.setTitle("Make Bid");
                 LayoutInflater inflater = LayoutInflater.from(ItemActivity.this);
                 final View findView = (inflater.inflate(R.layout.bid_layout, null));
                 builder.setView(findView);
@@ -76,7 +76,8 @@ public class ItemActivity extends ActionBarActivity {
                                         String bid_s = bid.getText().toString();
                                         bid_s = bid_s.replace("Current Bids: ", "");
                                         bid.setText("Current Bids: " + ((Integer.parseInt(bid_s))+1));
-                                    } else {
+                                    }
+                                    else {
                                         Toast.makeText(ItemActivity.this, "Invalid bid", Toast.LENGTH_SHORT).show();
                                     }
                                 }
