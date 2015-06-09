@@ -34,19 +34,17 @@ public class WatchedActivity extends ActionBarActivity {
         List<CardInfo> cards = new ArrayList<CardInfo>();
 
         //CardInfo(String name, int price, String contact, String desc,int image, int days, boolean sold, boolean buyNow, int numBids, String categories){
-        cards.add(new CardInfo("Full Sized Bed", 100, "Full sized ikea bed frame & mattress", R.drawable.bed, 1, false,  3, "#Household #Furniture"));
-        cards.add(new CardInfo("Cat Playtime", 0,  "That is one fine cat, and this is your chance to destress! Come play with Jackson, he loves people.", R.drawable.cat1, 1, false, 50, "#Misc"));
-        cards.add(new CardInfo("Purple Bike", 25, "Perfect condition bike for sale. It was bought brand new in October. " +
-                "The reason I'm selling this bike is because I'm moving to Europe.Comes with lock.", R.drawable.bike, 1, false, 1, "#Transprortation"));
-        cards.add(new CardInfo("Toucan", 532,  "That is one fine Toucan? Sometimes chirps", R.drawable.cat2, 2, false, 0, ""));
-        cards.add(new CardInfo("Beats Pill", 100,  "Good as new Beats Pill! Comes with the box, a case, and all the cables.", R.drawable.beats_pill, 3, false, 0, "#Technology"));
-        cards.add(new CardInfo("Dresser", 35, "Can be used as a nightstand or dresser!\n" +
-                "Made of Solid Wood--great quality and in great condition. ", R.drawable.dresser, 3, false, 5, "#Household #Furniture"));
-        cards.add(new CardInfo("Desk Chair", 50,  "Super comfy leather desk chair", R.drawable.deskchair, 5, false,  0, "#Household #Furniture"));
-        cards.add(new CardInfo("Wetsuit Size 8", 80, "Selling a womens dawn patrol Ripcurl wetsuit, 5/3 GB, Size 8, almost new! only used once! In perfect condition!"
-                , R.drawable.wetsuit, 7, true, 0, "#Fashion"));
-        cards.add(new CardInfo("Free Food!", 0, "Just try to clear out the fridge, plz take! \n" +
-                "Eggs, cheese, salami, sauces, lemons.", R.drawable.freefood, 7, true, 0, "#Food"));
+
+        cards.add(new CardInfo("Cat Playtime", 0,  "That is one fine cat! Come play with Jackson, he loves people.", R.drawable.cat1, 1, false, 50, "#Misc"));
+
+        cards.add(new CardInfo("Toucat", 532,  "That is one fine Toucan. Sometimes chirps", R.drawable.cat2, 2, false, 0, ""));
+        cards.add(new CardInfo("Beats PillCat", 100,  "Good as new Cat! Comes with the cat and all the accessories.", R.drawable.beats_pill, 3, false, 0, "#Technology"));
+        cards.add(new CardInfo("CatDresser", 35, "Can be used as a great cat!", R.drawable.cat6, 3, true, 5, "#Household #Furniture"));
+        cards.add(new CardInfo("Desk Cat", 50,  "Super comfy leather desk chair", R.drawable.cat5, 5, true,  0, "#Household #Furniture"));
+        cards.add(new CardInfo("Wetcat, Size 8", 80, "Selling a cat's dawn patrol Ripcurl wetsuit, 5/3 GB, Size 8, almost new! only used once! In perfect condition!"
+                , R.drawable.cat3, 7, true, 0, "#Fashion"));
+        cards.add(new CardInfo("Free FoodCat!", 0, "Just try to clear out the fridge, plz take! \n" +
+                "Bring your cat", R.drawable.cat4, 7, true, 0, "#Food"));
 
 
         return cards;
