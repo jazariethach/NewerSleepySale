@@ -75,7 +75,8 @@ public class ItemActivity extends ActionBarActivity {
                                         s = s.replace("$", "");
                                     }
                                     if (Integer.parseInt(s) < Integer.parseInt(fill_price.getText().toString())) {
-                                        price.setText("$" + fill_price.getText());
+                                        s = "$" + fill_price.getText();
+                                        price.setText(s);
                                         TextView bid = (TextView) findViewById(R.id.buyType);
                                         String bid_s = bid.getText().toString();
                                         bid_s = bid_s.replace("Current Bids: ", "");
