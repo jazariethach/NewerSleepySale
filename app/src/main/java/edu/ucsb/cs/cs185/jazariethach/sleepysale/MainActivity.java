@@ -2,15 +2,12 @@ package edu.ucsb.cs.cs185.jazariethach.sleepysale;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
 
 import com.squareup.picasso.Picasso;
 
@@ -18,35 +15,60 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+/* To those seniors
+            _.-'`'-._
+         .-'    _    '-.
+          `-.__  `\_.-'
+            |  `-``\|
+            `-.....-A
+                    #
+                    #
+ */
+
+// Here goes my try at documentation, Idk how it'll be but I'm pretty sure nobody minds
 public class MainActivity extends ActionBarActivity {
     Context context;
 
+    // So this function creates something, apparently it takes in a bundle...
+    // ... wow a whole bundle, that's amazingly remarkable!!!
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
 
+        // We see here that the amazing bundle needs a recycler view, well
+        // you know, because we want to recycle that amazing bundle of
+        // love of course
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
-
+        // Well at this point of the code, we see that the bundle is just a bit too
+        // overwhelming for us, so we have to adapt to this amazingness, therefore
+        // we create an adapter that can adapt for us!!! great-io!
         MyAdapter adapter = new MyAdapter(context, createList());
         recList.setAdapter(adapter);
     }
 
+
+    // Our options menu for this bundle of goodness, the more options the better ;)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
+    // Our bundle of goodness, we need to know what it does when it activates huh?
+    // So we are gonna do just that
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.add) {
             final Intent nextScreen = new Intent(this, SaleActivity.class);
@@ -57,7 +79,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-
+    // createList() is a function that creates a beautiful dandy list that our amazing
+    // bundle of goodness
     private List<CardInfo> createList() {
         List<CardInfo> cards = new ArrayList<CardInfo>();
 
@@ -90,3 +113,25 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 }
+
+/*   ."".    ."",
+     |  |   /  /
+     |  |  /  /
+     |  | /  /
+     |  |/  ;-._
+     }  ` _/  / ;
+     |  /` ) /  /
+     | /  /_/\_/\
+     |/  /      |
+     (  ' \ '-  |
+      \    `.  /
+       |      |
+       |      |
+*/
+
+// Side notes, apparently we want everything to be more colorful, so we are changing to blue
+// Jaz is pretty pissed
+// Felicia thinks it's the same one
+// She says it might be a little lighter
+// Jaz says it's a little better, but lighter
+// Felicia says we can do gray

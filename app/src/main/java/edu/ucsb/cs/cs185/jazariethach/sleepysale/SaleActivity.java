@@ -22,7 +22,13 @@ import java.util.*;
 import android.widget.*;
 import com.squareup.picasso.Picasso;
 
-
+/* Our salesman
+  /\_/\
+=( °w° )=
+  )   (  //
+ (__ __)//
+*/
+// Like fries to the habit, we need a SaleActivity to a class
 public class SaleActivity extends ActionBarActivity {
     ListView list_view;
     List<String> list = new ArrayList<String>();
@@ -34,6 +40,9 @@ public class SaleActivity extends ActionBarActivity {
     int i = 0;
     File file = null;
 
+    // We need to create our cashier, and train them to be an expert in
+    // the Beauty, Electronics, etc section
+    // ༼ つ ◕_◕ ༽つ
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +115,9 @@ public class SaleActivity extends ActionBarActivity {
     final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1;
 
 
+    // The cashier needs to know how to report thieves.... to do this
+    // we gave him the power to take pictures
+    // ( ͠° ͟ʖ ͡°)﻿
     private void launchCamera() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File dir = new File(this.getExternalFilesDir(null), "SleepySale");
@@ -127,6 +139,7 @@ public class SaleActivity extends ActionBarActivity {
         }
     }
 
+    // Creates our options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -134,6 +147,7 @@ public class SaleActivity extends ActionBarActivity {
         return true;
     }
 
+    // Tells it what to do when we click an option
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -153,6 +167,7 @@ public class SaleActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // Well I'm guessing this is going to be when the cashier quits, but I'm not sure?
     public void endDate(View view) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(SaleActivity.this);
         builder.setTitle("Select Duration");
@@ -174,3 +189,17 @@ public class SaleActivity extends ActionBarActivity {
         builder.show();
     }
 }
+/*   ."".    ."",
+     |  |   /  /
+     |  |  /  /
+     |  | /  /
+     |  |/  ;-._
+     }  ` _/  / ;
+     |  /` ) /  /
+     | /  /_/\_/\
+     |/  /      |
+     (  ' \ '-  |
+      \    `.  /
+       |      |
+       |      |
+*/
