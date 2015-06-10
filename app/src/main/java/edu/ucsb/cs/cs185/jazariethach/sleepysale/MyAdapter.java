@@ -57,7 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CardViewHolder> {
 
         cvh.date.setText("Days left: " + ci.days);
         cvh.tags.setText(ci.tags);
-        Picasso.with(context).load(ci.image).resize(800, 700).into(cvh.iv);
+        Picasso.with(context).load(ci.image).resize(400, 350).into(cvh.iv);
         //Picasso.with(msgContext).load(ci.image).centerCrop().into((ImageView)cvh.iv.findViewById(R.id.image));
 
     }
