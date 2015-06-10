@@ -151,6 +151,7 @@ public class SaleActivity extends ActionBarActivity {
             final Intent nextScreen = new Intent(this, MainActivity.class);
             this.startActivity(nextScreen);
             return true;
+
         }
 
         return super.onOptionsItemSelected(item);
