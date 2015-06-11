@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="edu.ucsb.cs.cs185.jazariethach.sleepysale.Login" />
+                    android:value="edu.ucsb.cs.cs185.jazariethach.sleepysale.SleepySale" />
 
             </intent-filter>
         </activity>
@@ -45,7 +45,7 @@
             android:label="@string/title_activity_message" >
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".SleepySale"
             android:label="@string/title_activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

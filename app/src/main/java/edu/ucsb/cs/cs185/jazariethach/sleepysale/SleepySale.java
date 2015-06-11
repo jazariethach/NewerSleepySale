@@ -2,7 +2,6 @@ package edu.ucsb.cs.cs185.jazariethach.sleepysale;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class Login extends Activity {
+public class SleepySale extends Activity {
     private static EditText username;
     private static EditText password;
     private static Button login;
@@ -31,13 +30,13 @@ public class Login extends Activity {
 
                             Intent intent = new Intent("edu.ucsb.cs.cs185.jazariethach.sleepysale.MainActivity");
                             startActivity(intent);
-                            Toast.makeText(Login.this, "Welcome back user",
+                            Toast.makeText(SleepySale.this, "Welcome back user",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(Login.this,
+                            Toast.makeText(SleepySale.this,
                                     "The Username and Password combination is not recognized",
                                     Toast.LENGTH_SHORT).show();
-                            Toast.makeText(Login.this, "Please Try again",
+                            Toast.makeText(SleepySale.this, "Please Try again",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }

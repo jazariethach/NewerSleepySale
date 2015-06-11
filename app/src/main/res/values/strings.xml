@@ -25,7 +25,7 @@
     <string name="title_activity_sale">SaleActivity</string>
     <string name="title_activity_item">ItemActivity</string>
     <string name="title_activity_message">Message</string>
-    <string name="title_activity_login">Login</string>
+    <string name="title_activity_login">SleepySale</string>
 
 
     <string name="Login">Login</string>
